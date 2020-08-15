@@ -46,14 +46,14 @@ Madrid, Spain 28005<br>
         <label for="lname" >Last Name</label>
               <input type="text" name="lname" id="lname" placeholder="last name" required> <br><br>
               <label for="message">Message</label>
-    <textarea name="message" id="message" cols="100" rows="5" placeholder="please leave your comments here"></textarea> 
+    <textarea name="message" id="message" cols="100" rows="5" placeholder="please leave your comments here (no more than 240 characters)" maxlength="240"></textarea> 
     <br><br>
     
       <label for="email">Email:</label> 
       <input type="email" id="email" name="user_email" placeholder="your email address" required><br><br>
 
-      <label>Telephone:(optional) </label>
-      <input type="tel">
+      <label>Telephone: (only if you have a Spanish tel #) </label>
+      <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{3}" placeholder="###-###-###">
       <button type="submit">Send</button>
       
     </form>
