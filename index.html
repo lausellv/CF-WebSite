@@ -3,23 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Victor´s HTML Page</title>
   <link rel="shortcut icon" href="images/favicon.ico">
+  <title>Victor´s HTML Page</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header>
     <img src="http://via.placeholder.com/200x70" alt="logo">
     <nav>
     
-        <ul>
-            <li>
-                <a href="index.html">Home</a>
+        <ul role="menubar" class="navigation-list">
+            <li role="presentation">
+                <a href="index.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Home</a>
             </li>
-            <li>
-                <a href="about.html">About me</a>
+            <li role="presentation">
+                <a href="about.html" role="menuitem" class="navigation-list__item ">About me</a>
             </li>
-            <li>
-                <a href="contact.html">Contact</a>
+            <li role="presentation">
+                <a href="contact.html" role="menuitem" class="navigation-list__item ">Contact</a>
             </li>
         </ul>
      
@@ -29,8 +33,12 @@
 <div>
     <img src="http://via.placeholder.com/150x150" alt="A photograph of me">
     <h1>Hello World!</h1>
-    <p>My name is Victor Lausell and I an aspiring wed developer.</p>
+    <p>My name is Victor Lausell and I am an aspiring web developer.</p>
+
+    <a href="#">Default Link</a>
+    <button type="button">Default Button</button>
     <a href="https://github.com/lausellv/CF-WebSite.git">Check out my code</a>
+    <button class="button_secondary">Secondary Button</button>
 </div>
 
 <footer>
