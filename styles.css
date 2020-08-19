@@ -156,20 +156,6 @@ button:focus {
   flex-direction: column;
 }
 
-
-.grid {
-  display: grid;
-  grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 300px 300px;
-}
-
-
-.grid__item {
-  background-color: lightblue; 
-
-}
-
 /* .social-media {
 
 } */
-
