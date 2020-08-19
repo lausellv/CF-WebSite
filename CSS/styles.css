@@ -142,6 +142,7 @@ button:focus {
 .profile__portrait {
   float: left;
   width: 250px;
+  height: 250px;
   /* height:250px; or height:auto;  don't need it bc it's a square img, I created it, so I know for sure*/
   /* margin-right:40px; */
   border-radius: 50%;
