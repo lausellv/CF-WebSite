@@ -119,6 +119,10 @@ button:focus {
   text-align: right;
 }
 
+#work {
+  padding: 20px;
+}
+
 .navigation-list {
   list-style-type: none;
 }
@@ -132,14 +136,14 @@ button:focus {
   text-decoration: none;
 }
 
-.profile {
+div.profile {
   max-width: 700px;
   margin: 0 auto;
   display: flex;
   flex-flow: row;
 }
 
-.profile__portrait {
+.profile .profile__portrait {
   float: left;
   width: 250px;
   height: 250px;
@@ -150,13 +154,6 @@ button:focus {
   flex-shrink: 0;
 }
 
-.page-footer {
-  clear: both;
-  display: flex;
-  flex-direction: column;
-}
-
-
 .grid {
   display: grid;
   grid-template-columns: 300px 300px 300px;
@@ -164,12 +161,22 @@ button:focus {
 }
 
 
-.grid__item {
+.grid .grid__item {
   background-color: lightblue; 
 
 }
 
-/* .social-media {
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.social-media {
+text-align: center;
+}
+
+/* .social-media--item {
 
 } */
-
