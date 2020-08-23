@@ -180,3 +180,39 @@ text-align: center;
 /* .social-media--item {
 
 } */
+/*  devices that are greater than 500px but less than 700px wide*/
+
+@media all and (min-width: 500px) and (max-width: 700px) {
+.grid {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.grid__item:last-child {
+grid-column: auto / auto;
+grid-row: auto / auto;
+}
+
+h1 {
+  font-size: 22px
+}
+}
+
+
+
+
+/*  devices less than 500px wide*/
+
+@media all and (max-width: 500px) {
+.grid {
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+.grid__item:last-child {
+  grid-column: auto / auto;
+  grid-row: auto / auto;
+}
+h1 {
+  font-size: 22px;
+}
+}
