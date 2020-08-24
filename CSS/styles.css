@@ -72,6 +72,18 @@ a.active {
   color: #489c79;
 }
 
+ .about {
+  text-align: center;
+
+}
+
+div.about, div.social-media, div.profile  {
+  border-style: none;
+}
+ {
+  border-style: none;
+}
+
 button,
 .button {
    /* overwrites browser defaults and resets the border */
