@@ -72,21 +72,34 @@ a.active {
   color: #489c79;
 }
 
-button {
-  font-family: inherit;
+button,
+.button {
+   /* overwrites browser defaults and resets the border */
+   border: none;
+   display: inline-block;
+    /* takes the font from the outer container */
+   font-family: inherit;
+     /* styles the button */
   background-color: #90a4ae;
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
-  border: none;
+  /* no need to specify the font-size since it was done when styling the body */
+  /* font-size: 16px; */
   padding: 10px;
   border-radius: 3px;
+  /* width of the border, type, color */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition-duration: 0.2s;
+  transition-property: opacity;
 }
 
 button:hover,
-button:focus {
+button:focus,
+.button:hover,
+.button:focus {
+    /* reduces the opacity of the button to 80% */
   opacity: 0.8;
+    /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
 }
 
@@ -111,7 +124,7 @@ button:focus {
   flex-basis: 200px;
   flex-shrink: 1;
   flex-grow: 0;
-/* flex: 0, 1 200px; */
+  /* flex: 0, 1 200px; */
 }
 /* do we need to have .page-header here? not really */
 .page-header .page-header__item:last-child {
@@ -140,7 +153,6 @@ div.profile {
   max-width: 700px;
   margin: 0 auto;
   display: flex;
-  flex-flow: row;
 }
 
 .profile .profile__portrait {
@@ -160,10 +172,8 @@ div.profile {
   grid-template-rows: 300px 300px;
 }
 
-
 .grid .grid__item {
-  background-color: lightblue; 
-
+  background-color: lightblue;
 }
 
 .page-footer {
@@ -172,9 +182,8 @@ div.profile {
   flex-direction: column;
 }
 
-
 .social-media {
-text-align: center;
+  text-align: center;
 }
 
 /* .social-media--item {
@@ -188,7 +197,7 @@ text-align: center;
     grid-template-columns: 1fr;
     /* grid-gap: 10px; */
   }
-  
+
   /* we don't need this code bc it's included in @media all and (max-width: 750px) */
   /* .grid__item:last-child {
     grid-column: auto / auto;
@@ -197,18 +206,18 @@ text-align: center;
   h1 {
     font-size: 22px;
   } */
-  }
+}
 
 /*  devices that are greater than 500px but less than 700px wide*/
 
 @media all and (min-width: 500px) and (max-width: 750px) {
-.grid {
-  grid-template-columns: 1fr 1fr;
-  /* grid-gap: 10px; */
-}
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    /* grid-gap: 10px; */
+  }
 
-/* we don't need this code bc it's included in @media all and (max-width: 750px) */
-/* .grid__item:last-child {
+  /* we don't need this code bc it's included in @media all and (max-width: 750px) */
+  /* .grid__item:last-child {
 grid-column: auto / auto;
 grid-row: auto / auto;
 }
@@ -218,11 +227,9 @@ h1 {
 } */
 }
 
-
 /* this m-query combines (min-width: 0px) and (max-width:750px) and their shared code */
 
 @media all and (max-width: 750px) {
-
   .grid {
     grid-gap: 10px;
   }
