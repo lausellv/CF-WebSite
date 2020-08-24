@@ -78,7 +78,7 @@ button,
    border: none;
    display: inline-block;
     /* takes the font from the outer container */
-   font-family: inherit;
+   /* font-family: inherit; */
      /* styles the button */
   background-color: #90a4ae;
   color: #fff;
@@ -89,8 +89,10 @@ button,
   border-radius: 3px;
   /* width of the border, type, color */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  transition-duration: 0.2s;
-  transition-property: opacity;
+  /* transition-duration: 0.2s;
+  transition-property: opacity; */
+  /* combined transition duration with transition property */
+  transition: 0.2s opacity;
 }
 
 button:hover,
