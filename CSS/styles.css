@@ -74,14 +74,10 @@ a.active {
 
  .about {
   text-align: center;
-
 }
 
 div.about, div.social-media, div.profile  {
-  border-style: none;
-}
- {
-  border-style: none;
+  border: none;
 }
 
 button,
@@ -116,6 +112,8 @@ button:focus,
     /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
 }
+
+
 
 /* further practice with attribute selectors/ basically you're targeting the attribute itself and styling it*/
 /* a[role] {
@@ -204,6 +202,78 @@ div.profile {
 
 } */
 
+/* @keyframes color-change {
+  from {
+    fill: #edc655;
+  }
+  to {
+    fill: #f76414;
+  }
+} */
+/* using percentages */
+
+
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+.sun {
+  animation-duration: 4s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+/* .cloud-front {
+  animation-duration: 30s;
+  animation-name: cloud-move;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+} */
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+
+.cloud-back {
+  animation-duration: 30s;
+  animation-name: cloud-move-reverse;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+/* the order doesn't matter */
+.cloud-back {
+  animation: infinite 34s cloud-move-reverse alternate linear;
+}
 /*  devices less than 500px wide*/
 
 @media all and (max-width: 500px) {
@@ -212,6 +282,7 @@ div.profile {
     /* grid-gap: 10px; */
   }
 
+ 
   /* we don't need this code bc it's included in @media all and (max-width: 750px) */
   /* .grid__item:last-child {
     grid-column: auto / auto;
