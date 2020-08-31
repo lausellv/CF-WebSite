@@ -1,0 +1,459 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/*
+Colors used
+https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=90A4AE&secondary.color=BDBDBD
+
+Primary Color (blue grey): #90a4ae;
+    (black text): #000;
+    P-dark blue grey: #62757f;
+    (white text): #fff;
+
+Secondary Color (darker light grey): #E1E2E1;
+Background color (light grey): #F5F5F6;
+ */
+/* CSS rules to specify families
+font-family: 'Inconsolata', monospace;
+font-family: 'Montserrat', sans-serif; */
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --primary-color: #52646d;
+  --secondary-color: #e1e2e1;
+  --bg-color: #f5f5f6;
+  --light-blue-grey: rgb(146, 165, 172);
+  --primary-color-darker: darken(--primary-color, 20%);
+  --visited-links: #306569;
+  --active-links: #489c79;
+  --font-size-body: 16px;
+  --font-size-h1: 30px;
+  --font-size-h2: 24px;
+  --font-size-h3: 18px;
+  --font-weight-body: 400;
+  --font-weight-h1-h2-h3: 700;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "Inconsolata", monospace;
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  /* sets the line height to 1.6 */
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-h1-h2-h3);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h1-h2-h3);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-h1-h2-h3);
+}
+
+div {
+  padding: 10px; /* Adds a 10px inner spacing to all sides*/
+  margin: 10px; /* Adds a 10px outer spacing to all sides*/
+  border-width: 1px;
+  border-color: var(--black);
+  border-style: solid;
+  /* border: 1px solid black; Attributes describe: thickness, type, color */
+}
+
+a {
+  color: var(--primary-color);
+  /* color: #000; */
+}
+
+a.visited {
+  /* link previously visited */
+  color: var(--visited-links);
+}
+
+a:hover,
+a:focus {
+  /* always after a.visited!!! no underlining while hovering above the link */
+  text-decoration: none;
+}
+
+a:active {
+  /* selected link */
+  color: var(--active-links);
+}
+
+.about {
+  text-align: center;
+}
+
+div.about,
+div.social-media,
+div.profile {
+  border: none;
+}
+
+button,
+.button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  /* font-family: inherit; */
+  /* styles the button */
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  /* no need to specify the font-size since it was done when styling the body */
+  /* font-size: 16px; */
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  /* transition-duration: 0.2s;
+  transition-property: opacity; */
+  /* combined transition duration with transition property */
+  -webkit-transition: 0.2s opacity;
+  -o-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+}
+
+/* further practice with attribute selectors/ basically you're targeting the attribute itself and styling it*/
+/* a[role] {
+  background-color: #96aaa2;
+} */
+
+.button__secondary {
+  background-color: var(--secondary-color);
+  color: var(--black);
+  /* the rest is inherited by the styled applied to the original button. no need to go over that as long as this secondary button is below on the style sheet */
+}
+
+.page-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+
+.page-header__item {
+  -ms-flex-preferred-size: 200px;
+      flex-basis: 200px;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  /* flex: 0, 1 200px; */
+}
+/* do we need to have .page-header here? not really */
+.page-header .page-header__item:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: right;
+}
+
+#work {
+  padding: 20px;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
+div.profile {
+  max-width: 700px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile .profile__portrait {
+  float: left;
+  width: 250px;
+  height: 250px;
+  /* height:250px; or height:auto;  don't need it bc it's a square img, I created it, so I know for sure*/
+  /* margin-right:40px; */
+  border-radius: 50%;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 300px 300px 300px;
+  grid-template-columns: 300px 300px 300px;
+  -ms-grid-rows: 300px 300px;
+  grid-template-rows: 300px 300px;
+}
+
+.grid > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+.grid > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+
+.grid > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+
+.grid > *:nth-child(4) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+
+.grid > *:nth-child(5) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+}
+
+.grid > *:nth-child(6) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+}
+
+.grid .grid__item {
+  background-color: var(--light-blue-grey);
+}
+
+.page-footer {
+  clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.social-media {
+  text-align: center;
+}
+
+/* .social-media--item {
+
+} */
+
+/* @keyframes color-change {
+  from {
+    fill: #edc655;
+  }
+  to {
+    fill: #f76414;
+  }
+} */
+/* using percentages */
+
+@-webkit-keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+.sun {
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-name: color-change;
+          animation-name: color-change;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+.sun {
+  -webkit-animation: 4s color-change infinite alternate linear;
+          animation: 4s color-change infinite alternate linear;
+}
+
+@-webkit-keyframes cloud-move {
+  from {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}
+
+@keyframes cloud-move {
+  from {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}
+/* .cloud-front {
+  animation-duration: 30s;
+  animation-name: cloud-move;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+} */
+.cloud-front {
+  -webkit-animation: 30s cloud-move infinite alternate linear;
+          animation: 30s cloud-move infinite alternate linear;
+}
+
+@-webkit-keyframes cloud-move-reverse {
+  from {
+    -webkit-transform: translate(446px, 48px);
+            transform: translate(446px, 48px);
+  }
+  to {
+    -webkit-transform: translate(100px, 48px);
+            transform: translate(100px, 48px);
+  }
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    -webkit-transform: translate(446px, 48px);
+            transform: translate(446px, 48px);
+  }
+  to {
+    -webkit-transform: translate(100px, 48px);
+            transform: translate(100px, 48px);
+  }
+}
+
+.cloud-back {
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+  -webkit-animation-name: cloud-move-reverse;
+          animation-name: cloud-move-reverse;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+/* the order doesn't matter */
+.cloud-back {
+  -webkit-animation: infinite 34s cloud-move-reverse alternate linear;
+          animation: infinite 34s cloud-move-reverse alternate linear;
+}
+/*  devices less than 500px wide*/
+
+@media all and (max-width: 500px) {
+  .grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    /* grid-gap: 10px; */
+  }
+
+  /* we don't need this code bc it's included in @media all and (max-width: 750px) */
+  /* .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  } */
+}
+
+/*  devices that are greater than 500px but less than 700px wide*/
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .grid {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    /* grid-gap: 10px; */
+  }
+
+  /* we don't need this code bc it's included in @media all and (max-width: 750px) */
+  /* .grid__item:last-child {
+grid-column: auto / auto;
+grid-row: auto / auto;
+}
+
+h1 {
+  font-size: 22px
+} */
+}
+
+/* this m-query combines (min-width: 0px) and (max-width:750px) and their shared code */
+
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
