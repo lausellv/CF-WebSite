@@ -68,12 +68,6 @@ h3 {
   font-size: var(--font-size-h3);
   font-weight: var(--font-weight-h1-h2-h3);
 }
-textarea {
-  position: float;
-  bottom: 0;
-  right: 0;
-  width: 95%;
-}
 
 div {
   padding: 10px; /* Adds a 10px inner spacing to all sides*/
@@ -210,6 +204,13 @@ div.profile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+textarea {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 95%;
 }
 
 .profile .profile__portrait {
