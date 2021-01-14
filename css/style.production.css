@@ -206,6 +206,13 @@ div.profile {
   display: flex;
 }
 
+textarea {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  width: 95%;
+}
+
 .profile .profile__portrait {
   float: left;
   width: 250px;

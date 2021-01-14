@@ -44,26 +44,25 @@ Madrid, Spain 28005<br>
 </div> 
 
 <div>
-    <h1>Contact Us</h1>
+    <h1>Contact Me</h1>
     <p>Do you have any questions? Please do not hesitate to contact me directly. I will get back to you as soon as possible.</p>
-    <form action="#" method="post"> <br>
+    <!-- <form action="https://formspree.io/xbjprlvd" method="post"> <br> -->
         <label for="fname" class="newline">First Name</label>
-              <input type="text" name="fname" id="fname" placeholder="first name" required>
+              <input type="text" name="fname" id="fname" placeholder="first name" required><br><br>
         
         <label for="lname" >Last Name</label>
               <input type="text" name="lname" id="lname" placeholder="last name" required> <br><br>
               <label for="message">Message</label>
-    <textarea name="message" id="message" cols="100" rows="5" placeholder="please leave your comments here (no more than 240 characters)" maxlength="240"></textarea> 
+    <textarea name="message" id="message" cols="100" rows="5" placeholder="your comments here (no more than 240 characters)" maxlength="240"></textarea> 
     <br><br>
-    
-      <label for="email">Email:</label> 
+       <label for="email">Email:</label>
       <input type="email" id="email" name="user_email" placeholder="your email address" required><br><br>
 
-      <label for="tel">Telephone: (only if you have a Spanish tel #) </label>
-      <input type="tel" id="tel" pattern="\d{3}[\-]\d{3}[\-]\d{3}" placeholder="###-###-###">
+      <!-- <label for="tel">Telephone: (only if you have a Spanish tel #) </label> -->
+      <!-- <input type="tel" id="tel" pattern="\d{3}[\-]\d{3}[\-]\d{3}" placeholder="###-###-###"> -->
       <button type="submit">Send</button>
-      
-    </form>
+<!--        -->
+    <!-- </form> -->
 </div>
 <footer class="page-footer">
         <div class="social-media">
@@ -77,7 +76,11 @@ Madrid, Spain 28005<br>
         </div>
     </footer>
 
-
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <script>
+       window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+       formbutton("create", {action: "https://formspree.io/xbjprlvd"})
+    </script>
     <script src="js/tota11y.min.js"></script>
 </body>
 </html>
