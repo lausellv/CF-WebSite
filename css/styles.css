@@ -210,7 +210,9 @@ textarea {
   grid-template-rows: 300px 300px;
 }
 
-.grid .grid__item {
+.grid .grid-item {
+  height: 250px;
+  overflow: auto;
   background-color: var(--light-blue-grey);
 }
 
