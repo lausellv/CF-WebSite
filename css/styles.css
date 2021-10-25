@@ -206,7 +206,7 @@ textarea {
 
 .grid {
   display: grid;
-  grid-template-columns: 300px 300px 300px;
+  grid-template-columns: 300px 300px 300px 300px 300px 300px;
   grid-template-rows: 300px 300px;
 }
 
@@ -321,7 +321,7 @@ textarea {
 
 /*  devices that are greater than 500px but less than 700px wide*/
 
-@media all and (min-width: 500px) and (max-width: 750px) {
+@media all and (min-width: 500px) and (max-width: 1300px) {
   .grid {
     grid-template-columns: 1fr 1fr;
     /* grid-gap: 10px; */
@@ -340,7 +340,7 @@ h1 {
 
 /* this m-query combines (min-width: 0px) and (max-width:750px) and their shared code */
 
-@media all and (max-width: 750px) {
+@media all and (max-width: 1300px) {
   .grid {
     grid-gap: 10px;
   }
