@@ -1,7 +1,7 @@
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
 * Browsers: last 4 version
 */
 
@@ -21,71 +21,53 @@ Background color (light grey): #F5F5F6;
 font-family: 'Inconsolata', monospace;
 font-family: 'Montserrat', sans-serif; */
 
-:root {
-  --black: #000;
-  --white: #fff;
-  --primary-color: #52646d;
-  --secondary-color: #e1e2e1;
-  --bg-color: #f5f5f6;
-  --light-blue-grey: rgb(192, 208, 214);
-  --primary-color-darker: darken(--primary-color, 20%);
-  --visited-links: #306569;
-  --active-links: #489c79;
-  --font-size-body: 16px;
-  --font-size-h1: 30px;
-  --font-size-h2: 24px;
-  --font-size-h3: 18px;
-  --font-weight-body: 400;
-  --font-weight-h1-h2-h3: 700;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: #f5f5f6;
   font-family: "Inconsolata", monospace;
-  font-weight: var(--font-weight-body);
-  font-size: var(--font-size-body);
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.6;
   /* sets the line height to 1.6 */
 }
 
 h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-h1-h2-h3);
+  font-size: 30px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-h1-h2-h3);
+  font-size: 24px;
+  font-weight: 700;
 }
 
 h3 {
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-h1-h2-h3);
+  font-size: 18px;
+  font-weight: 700;
 }
 
 div {
   padding: 10px; /* Adds a 10px inner spacing to all sides*/
   margin: 10px; /* Adds a 10px outer spacing to all sides*/
   border-width: 1px;
-  border-color: var(--black);
+  border-color: #000;
   border-style: solid;
   /* border: 1px solid black; Attributes describe: thickness, type, color */
 }
 
 a {
-  color: var(--primary-color);
+  color: #52646d;
   /* color: #000; */
 }
 
 a.visited {
   /* link previously visited */
-  color: var(--visited-links);
+  color: #306569;
 }
 
 a:hover,
@@ -96,7 +78,7 @@ a:focus {
 
 a:active {
   /* selected link */
-  color: var(--active-links);
+  color: #489c79;
 }
 
 .about {
@@ -109,7 +91,30 @@ div.profile {
   border: none;
 }
 
-button,
+button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  /* font-family: inherit; */
+  /* styles the button */
+  background-color: #52646d;
+  color: #fff;
+  text-decoration: none;
+  /* no need to specify the font-size since it was done when styling the body */
+  /* font-size: 16px; */
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  /* transition-duration: 0.2s;
+  transition-property: opacity; */
+  /* combined transition duration with transition property */
+  -webkit-transition: 0.2s opacity;
+  -o-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
 .button {
   /* overwrites browser defaults and resets the border */
   border: none;
@@ -117,8 +122,8 @@ button,
   /* takes the font from the outer container */
   /* font-family: inherit; */
   /* styles the button */
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: #52646d;
+  color: #fff;
   text-decoration: none;
   /* no need to specify the font-size since it was done when styling the body */
   /* font-size: 16px; */
@@ -150,8 +155,8 @@ button:focus,
 } */
 
 .button__secondary {
-  background-color: var(--secondary-color);
-  color: var(--black);
+  background-color: #e1e2e1;
+  color: #000;
   /* the rest is inherited by the styled applied to the original button. no need to go over that as long as this secondary button is below on the style sheet */
 }
 
@@ -227,49 +232,35 @@ textarea {
       flex-shrink: 0;
 }
 
-.grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 300px 300px 300px 300px 300px 300px;
-  grid-template-columns: 300px 300px 300px 300px 300px 300px;
-  -ms-grid-rows: 300px 300px;
-  grid-template-rows: 300px 300px;
+.grid-item {
+  display: inline-block;
+  width: 33%;
+ }
+
+ @supports (display:grid){
+   .grid {
+    display:-ms-grid;
+    display:grid;
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:20px;
+  }
+  .grid-item {
+    background-color: undefined;
+    color:undefined;
+    width:auto;
+    min-height:auto;
+    padding:10px 15px;
+  }
 }
 
-.grid > *:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
 
-.grid > *:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-}
 
-.grid > *:nth-child(3) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-}
-
-.grid > *:nth-child(4) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-}
-
-.grid > *:nth-child(5) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-}
-
-.grid > *:nth-child(6) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
-}
 
 .grid .grid-item {
   height: 250px;
   overflow: auto;
-  background-color: var(--light-blue-grey);
+  background-color: rgb(192, 208, 214);
 }
 
 .page-footer {
@@ -435,39 +426,33 @@ textarea {
 
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
     /* grid-gap: 10px; */
   }
-
 }
-
 @media all and (min-width: 750px) and (max-width: 950px) {
   .grid {
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
     /* grid-gap: 10px; */
   }
-
 }
 @media all and (min-width: 950px) and (max-width: 1250px) {
   .grid {
-    -ms-grid-columns: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
     /* grid-gap: 10px; */
   }
-
 }
 
 @media all and (min-width: 1250px) and (max-width: 2000px) {
   .grid {
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr;
     /* grid-gap: 10px; */
   }
-
 }
-/* this m-query combines (min-width: 0px) and (max-width:750px) and their shared code */
 
 @media all and (max-width: 750px) {
   .grid {
