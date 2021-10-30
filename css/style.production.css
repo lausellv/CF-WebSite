@@ -55,14 +55,15 @@ div {
   padding: 10px; /* Adds a 10px inner spacing to all sides*/
   margin: 10px; /* Adds a 10px outer spacing to all sides*/
   border-width: 1px;
-  border-color: #000;
-  border-style: solid;
+  border-color: none;
+
   /* border: 1px solid black; Attributes describe: thickness, type, color */
 }
 
 a {
-  color: #52646d;
-  /* color: #000; */
+  text-decoration: none;
+  /* color: var(--primary-color); */
+  color: #000;
 }
 
 a.visited {
@@ -84,11 +85,63 @@ a:active {
 .about {
   text-align: center;
 }
+a.button {
+  background-color: #d3d3d3;
+  border: 1px solid #8c939b;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px rgb(170, 161, 161);
+          box-shadow: 2px 2px rgb(170, 161, 161);
+  color: rgb(3, 3, 3);
+  padding: 10px;
+  font-family: Inconsolata, monospace;
+}
 
-div.about,
-div.social-media,
-div.profile {
+div.about {
+  /* overwrites browser defaults and resets the border */
   border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  /* font-family: inherit; */
+  /* styles the button */
+  background-color: #d3d3d3;
+  color: #000;
+  text-decoration: none;
+  /* no need to specify the font-size since it was done when styling the body */
+  /* font-size: 16px; */
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  /* transition-duration: 0.2s;
+  transition-property: opacity; */
+  /* combined transition duration with transition property */
+  -webkit-transition: 0.2s opacity;
+  -o-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+div.social-media {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  /* font-family: inherit; */
+  /* styles the button */
+  background-color: #d3d3d3;
+  color: #000;
+  text-decoration: none;
+  /* no need to specify the font-size since it was done when styling the body */
+  /* font-size: 16px; */
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  /* transition-duration: 0.2s;
+  transition-property: opacity; */
+  /* combined transition duration with transition property */
+  -webkit-transition: 0.2s opacity;
+  -o-transition: 0.2s opacity;
+  transition: 0.2s opacity;
 }
 
 button {
@@ -98,8 +151,8 @@ button {
   /* takes the font from the outer container */
   /* font-family: inherit; */
   /* styles the button */
-  background-color: #52646d;
-  color: #fff;
+  background-color: #d3d3d3;
+  color: #000;
   text-decoration: none;
   /* no need to specify the font-size since it was done when styling the body */
   /* font-size: 16px; */
@@ -122,8 +175,8 @@ button {
   /* takes the font from the outer container */
   /* font-family: inherit; */
   /* styles the button */
-  background-color: #52646d;
-  color: #fff;
+  background-color: #d3d3d3;
+  color: #000;
   text-decoration: none;
   /* no need to specify the font-size since it was done when styling the body */
   /* font-size: 16px; */
@@ -137,6 +190,10 @@ button {
   -webkit-transition: 0.2s opacity;
   -o-transition: 0.2s opacity;
   transition: 0.2s opacity;
+}
+
+div.social-media.about{
+  background-color:#F5F5F6;
 }
 
 button:hover,
@@ -188,28 +245,42 @@ button:focus,
 
 #work {
   padding: 20px;
+  text-align: center;
 }
 
 .navigation-list {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float:right;
+
 }
 
 .navigation-list li {
   display: inline-block;
-  margin-left: 15px;
+  
+  margin-right: 15px;
 }
 
 .navigation-list__item--active {
   text-decoration: none;
+  text-align: center;
 }
 
 div.profile {
-  max-width: 700px;
-  margin: 0 auto;
+  width: 60%;
+  border: none !important;
+  margin: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+div.nav-title.logo {
+  border-color: none;
+  border-style: none;
+}
+
 
 textarea {
   position: relative;
@@ -224,7 +295,7 @@ textarea {
   height: 250px;
   /* height:250px; or height:auto;  don't need it bc it's a square img, I created it, so I know for sure*/
   /* margin-right:40px; */
-  border-radius: 50%;
+  /* border-radius: 50%; */
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
@@ -235,27 +306,24 @@ textarea {
 .grid-item {
   display: inline-block;
   width: 33%;
- }
+}
 
- @supports (display:grid){
-   .grid {
-    display:-ms-grid;
-    display:grid;
+@supports (display: grid) {
+  .grid {
+    display: -ms-grid;
+    display: grid;
     -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap:20px;
+    grid-gap: 20px;
   }
   .grid-item {
     background-color: undefined;
-    color:undefined;
-    width:auto;
-    min-height:auto;
-    padding:10px 15px;
+    color: undefined;
+    width: auto;
+    min-height: auto;
+    padding: 10px 15px;
   }
 }
-
-
-
 
 .grid .grid-item {
   height: 250px;
