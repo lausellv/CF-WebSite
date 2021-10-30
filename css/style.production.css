@@ -208,7 +208,7 @@ button:focus,
 
 /* further practice with attribute selectors/ basically you're targeting the attribute itself and styling it*/
 /* a[role] {
-  background-color: #96aaa2;
+  background-color: #D3D3D3;
 } */
 
 .button__secondary {
@@ -328,7 +328,7 @@ textarea {
 .grid .grid-item {
   height: 250px;
   overflow: auto;
-  background-color: rgb(192, 208, 214);
+  background-color: #D3D3D3;
 }
 
 .page-footer {
