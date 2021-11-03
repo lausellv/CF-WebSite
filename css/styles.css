@@ -197,11 +197,17 @@ button:focus,
 }
 
 div.profile {
-  width: 60%;
+  /* width: 60%; */
   border: none !important;
   margin: 1%;
   display: flex;
 }
+
+#column2 img {
+  float: left;
+  padding: 5px;
+}
+
 div.nav-title.logo {
   border-color: none;
   border-style: none;
@@ -356,6 +362,7 @@ textarea {
 }
 
 /*  devices that are greater than 500px but less than 700px wide*/
+
 
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {

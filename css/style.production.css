@@ -21,34 +21,52 @@ Background color (light grey): #F5F5F6;
 font-family: 'Inconsolata', monospace;
 font-family: 'Montserrat', sans-serif; */
 
+:root {
+  --black: #000;
+  --white: #fff;
+  --primary-color: #d3d3d3;
+  --secondary-color: #e1e2e1;
+  --bg-color: #f5f5f6;
+  --light-blue-grey:#D3D3D3;
+  --primary-color-darker: darken(--primary-color, 20%);
+  --visited-links: #306569;
+  --active-links: #489c79;
+  --font-size-body: 16px;
+  --font-size-h1: 30px;
+  --font-size-h2: 24px;
+  --font-size-h3: 18px;
+  --font-weight-body: 400;
+  --font-weight-h1-h2-h3: 700;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
-  background-color: #f5f5f6;
+  background-color: var(--bg-color);
   font-family: "Inconsolata", monospace;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-body);
   line-height: 1.6;
   /* sets the line height to 1.6 */
 }
 
 h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  font-weight: 700;
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-h1-h2-h3);
 }
 
 h2 {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h1-h2-h3);
 }
 
 h3 {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-h1-h2-h3);
 }
 
 div {
@@ -68,7 +86,7 @@ a {
 
 a.visited {
   /* link previously visited */
-  color: #306569;
+  color: var(--visited-links);
 }
 
 a:hover,
@@ -79,7 +97,7 @@ a:focus {
 
 a:active {
   /* selected link */
-  color: #489c79;
+  color: var(--active-links);
 }
 
 .about {
@@ -96,78 +114,9 @@ a.button {
   font-family: Inconsolata, monospace;
 }
 
-div.about {
-  /* overwrites browser defaults and resets the border */
-  border: none;
-  display: inline-block;
-  /* takes the font from the outer container */
-  /* font-family: inherit; */
-  /* styles the button */
-  background-color: #d3d3d3;
-  color: #000;
-  text-decoration: none;
-  /* no need to specify the font-size since it was done when styling the body */
-  /* font-size: 16px; */
-  padding: 10px;
-  border-radius: 3px;
-  /* width of the border, type, color */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  /* transition-duration: 0.2s;
-  transition-property: opacity; */
-  /* combined transition duration with transition property */
-  -webkit-transition: 0.2s opacity;
-  -o-transition: 0.2s opacity;
-  transition: 0.2s opacity;
-}
-
-div.social-media {
-  /* overwrites browser defaults and resets the border */
-  border: none;
-  display: inline-block;
-  /* takes the font from the outer container */
-  /* font-family: inherit; */
-  /* styles the button */
-  background-color: #d3d3d3;
-  color: #000;
-  text-decoration: none;
-  /* no need to specify the font-size since it was done when styling the body */
-  /* font-size: 16px; */
-  padding: 10px;
-  border-radius: 3px;
-  /* width of the border, type, color */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  /* transition-duration: 0.2s;
-  transition-property: opacity; */
-  /* combined transition duration with transition property */
-  -webkit-transition: 0.2s opacity;
-  -o-transition: 0.2s opacity;
-  transition: 0.2s opacity;
-}
-
-button {
-  /* overwrites browser defaults and resets the border */
-  border: none;
-  display: inline-block;
-  /* takes the font from the outer container */
-  /* font-family: inherit; */
-  /* styles the button */
-  background-color: #d3d3d3;
-  color: #000;
-  text-decoration: none;
-  /* no need to specify the font-size since it was done when styling the body */
-  /* font-size: 16px; */
-  padding: 10px;
-  border-radius: 3px;
-  /* width of the border, type, color */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  /* transition-duration: 0.2s;
-  transition-property: opacity; */
-  /* combined transition duration with transition property */
-  -webkit-transition: 0.2s opacity;
-  -o-transition: 0.2s opacity;
-  transition: 0.2s opacity;
-}
-
+div.about,
+div.social-media,
+button,
 .button {
   /* overwrites browser defaults and resets the border */
   border: none;
@@ -175,8 +124,8 @@ button {
   /* takes the font from the outer container */
   /* font-family: inherit; */
   /* styles the button */
-  background-color: #d3d3d3;
-  color: #000;
+  background-color: var(--primary-color);
+  color: var(--black);
   text-decoration: none;
   /* no need to specify the font-size since it was done when styling the body */
   /* font-size: 16px; */
@@ -212,8 +161,8 @@ button:focus,
 } */
 
 .button__secondary {
-  background-color: #e1e2e1;
-  color: #000;
+  background-color: var(--secondary-color);
+  color: var(--black);
   /* the rest is inherited by the styled applied to the original button. no need to go over that as long as this secondary button is below on the style sheet */
 }
 
@@ -269,13 +218,19 @@ button:focus,
 }
 
 div.profile {
-  width: 60%;
+  /* width: 60%; */
   border: none !important;
   margin: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+
+#column2 img {
+  float: left;
+  padding: 5px;
+}
+
 div.nav-title.logo {
   border-color: none;
   border-style: none;
@@ -317,8 +272,8 @@ textarea {
     grid-gap: 20px;
   }
   .grid-item {
-    background-color: undefined;
-    color: undefined;
+    background-color: var(--grid-background);
+    color: var(--dark-font);
     width: auto;
     min-height: auto;
     padding: 10px 15px;
@@ -328,7 +283,7 @@ textarea {
 .grid .grid-item {
   height: 250px;
   overflow: auto;
-  background-color: #D3D3D3;
+  background-color: var(--light-blue-grey);
 }
 
 .page-footer {
@@ -491,6 +446,7 @@ textarea {
 }
 
 /*  devices that are greater than 500px but less than 700px wide*/
+
 
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
