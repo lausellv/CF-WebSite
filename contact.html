@@ -39,20 +39,38 @@
         </nav>
       </header>
    <div >
-<div>Victor Lausell <br>
-Carrera de San Francisco 13 <br>
-Madrid, Spain 28005</div>
-    <div><p >Email me at: </p><a  href="mailto:lausellv@yahoo.com" style="text-decoration:underline">lausellv@yahoo.com</a></div>
-
 <div>
-<p>Skype me at:</p><a href="skype:lausellv?add" style="text-decoration:underline">lausellv</a>
-</div>
+
+</form>
+  <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xqkwvdzj" method="post">
+    
+    <fieldset id="fs-frm-inputs">
+      <h3>Want to know more about my work? Let's talk!</h3> <br>
+      <div><label for="full-name">Full Name</label>
+      <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+      </div><div>
+      <label for="email-address">Email Address</label>
+      <input type="email" name="_replyto" id="email-address" placeholder="email@domain.com" required="">
+    </div><div><label for="message">Drop me a line.</label><br>
+      <textarea rows="5" name="message" id="message" placeholder="Write your message in here and I'll reach out to you soon." required=""></textarea>
+      <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+    </div> <div><input type="submit" value="Submit" ></div></fieldset>
+      
+     
+  </form>
+
+
+    <!-- <div><p >Email me at: </p><a  href="mailto:lausellv@yahoo.com" style="text-decoration:underline">lausellv@yahoo.com</a></div> -->
+
+
 </div> 
 
 
 <footer class="page-footer">
         <div class="social-media">
             <p>Find me on</p>
+               <!-- Skype logo -->
+      <a href="skype:lausellv?add" target="_blank"><img src="images/287648_skype_icon.svg" alt="skype" ></a>
           <!-- Github logo -->
       <a href="https://github.com/lausellv" target="_blank"><img src="images/iconfinder_github_394189b.svg" alt="github" ></a>
       <!-- Twitter logo -->
@@ -62,13 +80,13 @@ Madrid, Spain 28005</div>
         </div>
     </footer>
 
-    <!-- 
-      https://formspree.io/blog/html-contact-form/  HOW TO SET UP
-      <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
-    <script>
+    
+      <!-- https://formspree.io/blog/html-contact-form/  HOW TO SET UP -->
+      <!-- <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script> -->
+    <!-- <script>
        window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
-       formbutton("create", {action: "https://formspree.io/xbjprlvd"})
-    </script> -->
-    <script src="js/tota11y.min.js"></script>
+       formbutton("create", {action: "https://formspree.io/f/xqkwvdzj"})
+    </script>
+    <script src="js/tota11y.min.js"></script> -->
 </body>
 </html>
