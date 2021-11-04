@@ -220,6 +220,32 @@ textarea {
   right: 0;
   width: 95%;
 }
+.icon-container {
+  position: relative;
+}
+
+#stack {
+  
+    padding: 20px;
+    text-align: center;
+  
+}
+.stack-icons-container {
+  margin: 0 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+}
+
+.stack-icon {
+  max-height: 50px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
 
 .profile .profile__portrait {
   float: left;

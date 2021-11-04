@@ -21,52 +21,34 @@ Background color (light grey): #F5F5F6;
 font-family: 'Inconsolata', monospace;
 font-family: 'Montserrat', sans-serif; */
 
-:root {
-  --black: #000;
-  --white: #fff;
-  --primary-color: #d3d3d3;
-  --secondary-color: #e1e2e1;
-  --bg-color: #f5f5f6;
-  --light-blue-grey:#D3D3D3;
-  --primary-color-darker: darken(--primary-color, 20%);
-  --visited-links: #306569;
-  --active-links: #489c79;
-  --font-size-body: 16px;
-  --font-size-h1: 30px;
-  --font-size-h2: 24px;
-  --font-size-h3: 18px;
-  --font-weight-body: 400;
-  --font-weight-h1-h2-h3: 700;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: #f5f5f6;
   font-family: "Inconsolata", monospace;
-  font-weight: var(--font-weight-body);
-  font-size: var(--font-size-body);
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.6;
   /* sets the line height to 1.6 */
 }
 
 h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-h1-h2-h3);
+  font-size: 30px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-h1-h2-h3);
+  font-size: 24px;
+  font-weight: 700;
 }
 
 h3 {
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-h1-h2-h3);
+  font-size: 18px;
+  font-weight: 700;
 }
 
 div {
@@ -86,7 +68,7 @@ a {
 
 a.visited {
   /* link previously visited */
-  color: var(--visited-links);
+  color: #306569;
 }
 
 a:hover,
@@ -97,7 +79,7 @@ a:focus {
 
 a:active {
   /* selected link */
-  color: var(--active-links);
+  color: #489c79;
 }
 
 .about {
@@ -114,9 +96,78 @@ a.button {
   font-family: Inconsolata, monospace;
 }
 
-div.about,
-div.social-media,
-button,
+div.about {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  /* font-family: inherit; */
+  /* styles the button */
+  background-color: #d3d3d3;
+  color: #000;
+  text-decoration: none;
+  /* no need to specify the font-size since it was done when styling the body */
+  /* font-size: 16px; */
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  /* transition-duration: 0.2s;
+  transition-property: opacity; */
+  /* combined transition duration with transition property */
+  -webkit-transition: 0.2s opacity;
+  -o-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+div.social-media {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  /* font-family: inherit; */
+  /* styles the button */
+  background-color: #d3d3d3;
+  color: #000;
+  text-decoration: none;
+  /* no need to specify the font-size since it was done when styling the body */
+  /* font-size: 16px; */
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  /* transition-duration: 0.2s;
+  transition-property: opacity; */
+  /* combined transition duration with transition property */
+  -webkit-transition: 0.2s opacity;
+  -o-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  /* font-family: inherit; */
+  /* styles the button */
+  background-color: #d3d3d3;
+  color: #000;
+  text-decoration: none;
+  /* no need to specify the font-size since it was done when styling the body */
+  /* font-size: 16px; */
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  /* transition-duration: 0.2s;
+  transition-property: opacity; */
+  /* combined transition duration with transition property */
+  -webkit-transition: 0.2s opacity;
+  -o-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
 .button {
   /* overwrites browser defaults and resets the border */
   border: none;
@@ -124,8 +175,8 @@ button,
   /* takes the font from the outer container */
   /* font-family: inherit; */
   /* styles the button */
-  background-color: var(--primary-color);
-  color: var(--black);
+  background-color: #d3d3d3;
+  color: #000;
   text-decoration: none;
   /* no need to specify the font-size since it was done when styling the body */
   /* font-size: 16px; */
@@ -161,8 +212,8 @@ button:focus,
 } */
 
 .button__secondary {
-  background-color: var(--secondary-color);
-  color: var(--black);
+  background-color: #e1e2e1;
+  color: #000;
   /* the rest is inherited by the styled applied to the original button. no need to go over that as long as this secondary button is below on the style sheet */
 }
 
@@ -243,6 +294,112 @@ textarea {
   right: 0;
   width: 95%;
 }
+.icon-container {
+  position: relative;
+}
+
+#stack {
+  
+    padding: 20px;
+    text-align: center;
+  
+}
+.stack-icons-container {
+  margin: 0 10%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+.stack-icons-container > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.stack-icons-container > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+.stack-icons-container > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+.stack-icons-container > *:nth-child(4) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+.stack-icons-container > *:nth-child(5) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+}
+.stack-icons-container > *:nth-child(6) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+}
+.stack-icons-container > *:nth-child(7) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+.stack-icons-container > *:nth-child(8) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+}
+.stack-icons-container > *:nth-child(9) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+.stack-icons-container > *:nth-child(10) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+}
+.stack-icons-container > *:nth-child(11) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+}
+.stack-icons-container > *:nth-child(12) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+}
+.stack-icons-container > *:nth-child(13) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+.stack-icons-container > *:nth-child(14) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+}
+.stack-icons-container > *:nth-child(15) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+}
+.stack-icons-container > *:nth-child(16) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+}
+.stack-icons-container > *:nth-child(17) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+}
+.stack-icons-container > *:nth-child(18) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 3;
+}
+
+.stack-icon {
+  max-height: 50px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
 
 .profile .profile__portrait {
   float: left;
@@ -272,8 +429,8 @@ textarea {
     grid-gap: 20px;
   }
   .grid-item {
-    background-color: var(--grid-background);
-    color: var(--dark-font);
+    background-color: undefined;
+    color: undefined;
     width: auto;
     min-height: auto;
     padding: 10px 15px;
@@ -283,7 +440,7 @@ textarea {
 .grid .grid-item {
   height: 250px;
   overflow: auto;
-  background-color: var(--light-blue-grey);
+  background-color: #D3D3D3;
 }
 
 .page-footer {
